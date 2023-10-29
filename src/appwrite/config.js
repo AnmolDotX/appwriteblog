@@ -20,7 +20,7 @@ export class Service {
                 conf.appwriteDatabaseId,
                 conf.appwriteCollectionId,
                 slug,
-                {
+                { 
                     title,
                     content,
                     featuredImage,
@@ -31,7 +31,7 @@ export class Service {
         } catch (error) {
             console.log("appwrite service :: createPost :: error ", error);
         }
-    }
+    }   
 
     async updatePost(slug,{title, content, featuredImage, status}) {
         try {
