@@ -5,6 +5,7 @@ import { login, logout } from './store/authSlice';
 import loader from './assets/loader.svg'
 import {Header, Footer} from './components'
 import { Outlet } from 'react-router-dom';
+import { getPosts } from './store/postSlice';
 
 const App = () => {
 
@@ -22,6 +23,13 @@ const App = () => {
     })
     .catch((error)=>console.log(error))
     .finally(()=>setIsLoading(false))
+
+    try {
+      // dispatch(getPost())
+      dispatch(getPosts())
+    } catch (error) {
+      console.log("getpost error ", error);
+    }
   },[])
 
 
